@@ -1,0 +1,20 @@
+// This code will generate any pythagoran tripple given a pair of two consecutive numbers.
+function GenOppAdjHyp(x,y){
+  var a = Math.abs((x*x) - (y*y));
+  var b = 2*x*y;
+  var c = (x*x) + (y*y);
+  return ("Opposite="+ a +";" + "Adjacent="+ b +";" + "Hypotenous="+c);
+}
+//this function tests for the neccessary conditions
+function pyTripple (x,y){
+  if (((x > y) && (x == (y+1))) && (((x*x) - (y*y))%2 !== 0)){
+    return GenOppAdjHyp(x,y);       
+  }
+  else if (((y > x) && (y == (x+1))) && (((y*y) - (x*x))%2 !== 0)){
+    return GenOppAdjHyp(x,y);
+  }
+  else
+    return ("x and y cant generate pythagoran tripple");
+}
+
+console.log(pyTripple(3,2));
